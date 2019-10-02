@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxItem = new System.Windows.Forms.TextBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.textBoxItem = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.DisplayButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
@@ -59,14 +59,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Item Information";
             // 
-            // label1
+            // textBoxPrice
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Item Name";
+            this.textBoxPrice.Location = new System.Drawing.Point(110, 110);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(100, 26);
+            this.textBoxPrice.TabIndex = 1;
+            // 
+            // textBoxItem
+            // 
+            this.textBoxItem.Location = new System.Drawing.Point(110, 47);
+            this.textBoxItem.Name = "textBoxItem";
+            this.textBoxItem.Size = new System.Drawing.Size(100, 26);
+            this.textBoxItem.TabIndex = 1;
             // 
             // label2
             // 
@@ -77,19 +82,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Price";
             // 
-            // textBoxItem
+            // label1
             // 
-            this.textBoxItem.Location = new System.Drawing.Point(110, 47);
-            this.textBoxItem.Name = "textBoxItem";
-            this.textBoxItem.Size = new System.Drawing.Size(100, 26);
-            this.textBoxItem.TabIndex = 1;
-            // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.Location = new System.Drawing.Point(110, 110);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(100, 26);
-            this.textBoxPrice.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Item Name";
             // 
             // AddButton
             // 
@@ -99,6 +99,7 @@
             this.AddButton.TabIndex = 1;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // DisplayButton
             // 
@@ -118,6 +119,7 @@
             this.DeleteButton.TabIndex = 1;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // UpdateButton
             // 
@@ -127,15 +129,17 @@
             this.UpdateButton.TabIndex = 1;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(687, 370);
+            this.SearchButton.Location = new System.Drawing.Point(685, 372);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(75, 30);
             this.SearchButton.TabIndex = 1;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // textBoxId
             // 

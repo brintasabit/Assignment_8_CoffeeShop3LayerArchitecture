@@ -15,6 +15,7 @@ namespace CoffeeShop3LayerArchitecture
     public partial class Customers : Form
     {
         Items items=new Items();
+        Orders orders=new Orders();
         CustomerManager _customerManager=new CustomerManager();
         Customer _customer=new Customer();
         
@@ -35,12 +36,8 @@ namespace CoffeeShop3LayerArchitecture
                 DataTable isSearch = _customerManager.SearchCustomer(_customer);
                 if (isSearch.Rows.Count > 0)
                 {
-
-                    //  customerDataGridView.DataSource = _customerManager.SearchCustomer(searchTextBox.Text);
                     MessageBox.Show("Name Exists");
                 }
-
-
                 else
                 {
                     bool isAdded = _customerManager.AddCustomer(_customer);
@@ -101,6 +98,21 @@ namespace CoffeeShop3LayerArchitecture
         private void Customers_Load(object sender, EventArgs e)
         {
             comboBoxItem.DataSource = _customerManager.ShowComboBox();
+        }
+
+        private void OrderButton_Click(object sender, EventArgs e)
+        {
+            if (orders.IsDisposed)
+            {
+                orders = new Orders();
+            }
+            orders.Show();
+            orders.BringToFront();
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
