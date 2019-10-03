@@ -62,19 +62,16 @@ namespace CoffeeShop3LayerArchitecture
         {
             try
             {
-                _order.Name = comboBoxCustomerName.Text;
-                _order.Item = comboBoxCustomerOrder.Text;
+                _order.Name = (comboBoxCustomerName.Text);
+                _order.Item = (comboBoxCustomerOrder.Text);
                 _order.Quantity = Convert.ToInt32(textBoxQuantity.Text);
                 // _order.TotalPrice = Convert.ToInt32(priceTextBox.Text);
                 bool isAdded = _orderManager.AddOrder(_order);
                 if (isAdded)
                 {
-                   // _orderManager.ShowOrder();
                     MessageBox.Show("Saved");
-                    
+                    dataGridViewOrder.DataSource = _orderManager.ShowOrder();
                 }
-
-
             }
             catch (Exception exception)
             {

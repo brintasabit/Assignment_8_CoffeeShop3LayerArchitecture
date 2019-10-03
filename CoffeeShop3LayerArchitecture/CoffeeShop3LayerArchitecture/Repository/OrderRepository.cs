@@ -68,22 +68,23 @@ namespace CoffeeShop3LayerArchitecture.Repository
         }
         public bool AddOrder(Order _order)
         {
-            if (_order.Item=="Hot")
+            if (_order.Item == "Hot")
             {
-                _order.TotalPrice = _order.Quantity * 120;
+                _order.TotalPrice = _order.Quantity * 80;
                 string connectionString = @"Server=BRINTA-PC; Database=CoffeeShop; Integrated Security=True";
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
-                string commandString = @"insert into Orders values('" + _order.Name + "' ," + _order.Quantity + "," + _order.TotalPrice + " )";
+                string commandString = @"insert into Orders values('" + _order.Name + "','" + _order.Item + "' ," + _order.Quantity + "," + _order.TotalPrice + " )";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
                 sqlConnection.Open();
                 int isExecuted = sqlCommand.ExecuteNonQuery();
+               // int isExecuted2 = sqlCommand2.ExecuteNonQuery();
                 if (isExecuted > 0)
                 {
                     return true;
                 }
                 sqlConnection.Close();
             }
-            else if (_order.Item == "Regular")
+            if (_order.Item == "Regular")
             {
                 _order.TotalPrice = _order.Quantity * 80;
                 string connectionString = @"Server=BRINTA-PC; Database=CoffeeShop; Integrated Security=True";
@@ -98,7 +99,7 @@ namespace CoffeeShop3LayerArchitecture.Repository
                 }
                 sqlConnection.Close();
             }
-            else if (_order.Item == "Cold")
+            if (_order.Item == "Cold")
             {
                 _order.TotalPrice = _order.Quantity * 100;
                 string connectionString = @"Server=BRINTA-PC; Database=CoffeeShop; Integrated Security=True";
@@ -113,7 +114,7 @@ namespace CoffeeShop3LayerArchitecture.Repository
                 }
                 sqlConnection.Close();
             }
-            else if (_order.Item == "Black")
+            if (_order.Item == "Black")
             {
                 _order.TotalPrice = _order.Quantity * 90;
                 string connectionString = @"Server=BRINTA-PC; Database=CoffeeShop; Integrated Security=True";
